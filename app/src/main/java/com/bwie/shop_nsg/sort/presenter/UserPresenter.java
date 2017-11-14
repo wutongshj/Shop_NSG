@@ -2,7 +2,6 @@ package com.bwie.shop_nsg.sort.presenter;
 
 import com.bwie.shop_nsg.sort.bean.DataleftBean;
 import com.bwie.shop_nsg.sort.bean.DatarightBean;
-import com.bwie.shop_nsg.sort.bean.DateGridBean;
 import com.bwie.shop_nsg.sort.model.UserModel;
 import com.bwie.shop_nsg.sort.view.Iview;
 
@@ -10,7 +9,7 @@ import com.bwie.shop_nsg.sort.view.Iview;
  * Created by Administrator on 2017/11/8 0008.
  */
 
-public class UserPresenter implements UserModel.Sort_Finish,UserModel.Right_Finish,UserModel.Grid_Finish {
+public class UserPresenter implements UserModel.Sort_Finish,UserModel.Right_Finish{
 
     private final Iview sort_iview;
     private final UserModel sort_model;
@@ -31,6 +30,9 @@ public class UserPresenter implements UserModel.Sort_Finish,UserModel.Right_Fini
         sort_model.getrightmessage(id);
     }
 
+//    public void getgridData(String id2){
+//        sort_model.getgridmessage(id2);
+//    }
 
     @Override
     public void sortmessage(DataleftBean leftbean) {
@@ -42,8 +44,8 @@ public class UserPresenter implements UserModel.Sort_Finish,UserModel.Right_Fini
         sort_iview.getrightData(rightbean);
     }
 
-    @Override
-    public void sortgridmessage(DateGridBean gridbean) {
-        sort_iview.getgridData(gridbean);
-    }
+//    @Override
+//    public void sortgridmessage(DateGridBean gridbean) {
+//        sort_iview.getgridData(gridbean);
+//    }
 }

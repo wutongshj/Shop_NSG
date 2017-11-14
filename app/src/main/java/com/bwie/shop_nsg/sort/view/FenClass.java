@@ -18,7 +18,6 @@ import com.bwie.shop_nsg.sort.adapter.MyAdapter_left;
 import com.bwie.shop_nsg.sort.adapter.MyAdapter_right;
 import com.bwie.shop_nsg.sort.bean.DataleftBean;
 import com.bwie.shop_nsg.sort.bean.DatarightBean;
-import com.bwie.shop_nsg.sort.bean.DateGridBean;
 import com.bwie.shop_nsg.sort.presenter.UserPresenter;
 
 import butterknife.BindView;
@@ -95,9 +94,8 @@ public class FenClass extends Fragment implements Iview{
             public void recycleViewItemClickListener(int position, View view, RecyclerView.ViewHolder viewHolder) {
                 adapter_left.setTagPosition(position);
                 adapter_left.notifyDataSetChanged();
-                presenter.getrightUser(position+"");
+//                presenter.getrightUser(position+"");
                 //请求二级数据
-//                getServerTypeData(leftbean.getDatas().getClass_list().get(position).getGc_id(),position);
                 presenter.getrightUser(leftbean.getDatas().getClass_list().get(position).getGc_id());
             }
         });
@@ -112,19 +110,16 @@ public class FenClass extends Fragment implements Iview{
         typeRvright.setAdapter(adapter_right);
     }
 
-    @Override
-    public void getgridData(DateGridBean gridbean) {
-        Log.d("maingrid",gridbean.getCode()+"");
-//        adapter_right.myHolder.gv.setAdapter(new MyAdapter_TypeGridView(context,dateGridBean.getDatas().getClass_list()));
-    }
+//    @Override
+//    public void getgridData(DateGridBean gridbean) {
+//
+//    }
+
+//    @Override
+//    public void getgridData(DateGridBean gridbean) {
+//        Log.d("maingrid",gridbean.getCode()+"");
+////        adapter_right.myHolder.gv.setAdapter(new MyAdapter_TypeGridView(context,dateGridBean.getDatas().getClass_list()));
+//    }
 
 
-    public interface OnGetServerDateLisnter {
-        void getData(String string);
-    }
-    //请求二级数据
-    public void getServerTypeData(final String gc_id, final int position) {
-
-
-    }
 }

@@ -2,7 +2,6 @@ package com.bwie.shop_nsg.sort.view;
 
 import com.bwie.shop_nsg.sort.bean.DataleftBean;
 import com.bwie.shop_nsg.sort.bean.DatarightBean;
-import com.bwie.shop_nsg.sort.bean.DateGridBean;
 
 /**
  * Created by Administrator on 2017/11/8 0008.
@@ -17,5 +16,5 @@ public interface Iview {
     void getrightData(DatarightBean rightbean);
 
     //获得右边GridView
-    void getgridData(DateGridBean gridbean);
+//    void getgridData(DateGridBean gridbean);
 }

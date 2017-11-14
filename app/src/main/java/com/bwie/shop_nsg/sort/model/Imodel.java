@@ -11,6 +11,8 @@ public interface Imodel {
     //获得右边数据
     void getrightmessage(String id);
 
-    //获得grid数据
-    void getgridmessage(String id2, final UserModel.Grid_Finish grid_finish);
+//    //获得grid数据
+//    void getgridmessage(String id2, final UserModel.Grid_Finish grid_finish);
+
+
 }

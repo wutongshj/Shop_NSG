@@ -12,18 +12,25 @@ import android.widget.TextView;
 import com.bwie.shop_nsg.R;
 import com.bwie.shop_nsg.sort.bean.DatarightBean;
 import com.bwie.shop_nsg.sort.bean.DateGridBean;
-import com.bwie.shop_nsg.sort.model.UserModel;
+import com.bwie.shop_nsg.sort.presenter.RightDataPresenter;
+import com.bwie.shop_nsg.sort.view.IRightDataView;
 
 import java.util.List;
+
+import utils.Api;
 
 /**
  * Created by Administrator on 2017/10/20 0020.
  */
 
-public class MyAdapter_right extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
+public class MyAdapter_right extends RecyclerView.Adapter<RecyclerView.ViewHolder> implements IRightDataView{
     private Context context;
     private DatarightBean list;
     private MyLeftViewHolder myHolder;
+
+    MyAdapter_TypeGridView adapter;
+
+    RightDataPresenter userpresenter = new RightDataPresenter(this);
 
 
     public MyAdapter_right(Context context, DatarightBean list) {
@@ -46,14 +53,17 @@ public class MyAdapter_right extends RecyclerView.Adapter<RecyclerView.ViewHolde
         //设置标题
         myHolder.tv_left_type.setText(class_list.get(position).getGc_name());
 
-        UserModel userModel = new UserModel();
-        userModel.getgridmessage(list.getDatas().getClass_list().get(position).getGc_id(), new UserModel.Grid_Finish() {
-            @Override
-            public void sortgridmessage(DateGridBean gridbean) {
-                Log.d("maingridbean",gridbean.getDatas().getClass_list().get(position).getGc_name());
-                myHolder.gv.setAdapter(new MyAdapter_TypeGridView(context,gridbean.getDatas().getClass_list()));
-            }
-        });
+//        UserModel userModel = new UserModel();
+//        userModel.getgridmessage(list.getDatas().getClass_list().get(position).getGc_id());
+//        userModel.setGrid_finish(new UserModel.Grid_Finish() {
+//            @Override
+//            public void sortgridmessage(DateGridBean gridbean) {
+//                myHolder.gv.setAdapter(new MyAdapter_TypeGridView(context,gridbean.getDatas().getClass_list()));
+//            }
+//        });
+
+        String str = list.getDatas().getClass_list().get(position).getGc_id();
+        userpresenter.getUrl(Api.SORT_URL,str,myHolder.gv);
 
 
     }
@@ -61,6 +71,14 @@ public class MyAdapter_right extends RecyclerView.Adapter<RecyclerView.ViewHolde
     @Override
     public int getItemCount() {
         return list.getDatas().getClass_list().size();
+    }
+
+    @Override
+    public void getData(List<DateGridBean.DatasBean.ClassListBean> list, GridView gridView) {
+        Log.d("Main","qqqqqqqqqqqqqqqqqqqqqqqqqqqqq");
+        adapter = new MyAdapter_TypeGridView(context,list);
+        gridView.setAdapter(adapter);
+
     }
 
 
