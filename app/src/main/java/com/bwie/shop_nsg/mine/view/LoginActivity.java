@@ -85,7 +85,7 @@ public class LoginActivity extends AppCompatActivity implements Iview{
             Toast.makeText(LoginActivity.this,"登录成功",Toast.LENGTH_SHORT).show();
             EventBus.getDefault().post(new EventBean(name));
             SharedPreferencesUtils.setParam(LoginActivity.this,"name",name);
-            SharedPreferencesUtils.setParam(LoginActivity.this,"pass",pass);
+            SharedPreferencesUtils.setParam(LoginActivity.this,"isLogin",true);
             finish();
         }
     }

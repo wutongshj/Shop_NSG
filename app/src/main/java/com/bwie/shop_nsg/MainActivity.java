@@ -8,7 +8,6 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
-import android.widget.Toast;
 
 import com.bwie.shop_nsg.cart.view.Cart;
 import com.bwie.shop_nsg.home.view.Home;
@@ -47,11 +46,8 @@ public class MainActivity extends FragmentActivity {
         setContentView(R.layout.activity_main);
 
         ButterKnife.bind(this);
-        String name = (String) SharedPreferencesUtils.getParam(MainActivity.this, "name", "1");
-        String pass = (String) SharedPreferencesUtils.getParam(MainActivity.this, "pass", "1");
-        if(!name.equals("")||!pass.equals("")){
-            Toast.makeText(MainActivity.this,name+"======="+pass,Toast.LENGTH_SHORT).show();
-        }
+        String name = (String) SharedPreferencesUtils.getParam(MainActivity.this, "name", "未登录");
+
         init();
     }
 

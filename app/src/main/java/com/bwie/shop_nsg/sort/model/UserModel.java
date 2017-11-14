@@ -74,7 +74,7 @@ public class UserModel implements Imodel{
 
     @Override
     public void getrightmessage(String id) {
-        leftbean=new DataleftBean();
+        rightbean=new DatarightBean();
         Observable<DatarightBean> getrightsort = RetroFactory_sort.getInstance().getrightsort(id);
         getrightsort.subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())

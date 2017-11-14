@@ -6,6 +6,11 @@ package com.bwie.shop_nsg.mine.view.Bean;
 
 public class EventBean {
     private  String msg;
+
+    public void setMsg(String msg) {
+        this.msg = msg;
+    }
+
     public EventBean(String msg){
         this.msg = msg;
     }
