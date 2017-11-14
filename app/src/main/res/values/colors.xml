@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="first">#FF5001</color>
+    <color name="top_bg">#DD3000</color>
+    <color name="top_text">#ffffff</color>
+    <color name="button_text">#000000</color>
+
+
+    <color name="colorWhite">#FFFDFB</color>
+    <color name="colorWhite2">#F9F9F9</color>
+    <color name="colorWhite3">#FFFFFF</color>
+    <color name="colorBorder">#A1A1A1</color>
+    <color name="colorPblBackground">#A1A1A4</color>
+    <color name="colorPrice">#FF7001</color>
+    <color name="crimson">#dc143c</color>
+    <!-- 暗深红色 -->
+    <!-- 右边菜单点击颜色 -->
+    <color name="right_menu_unpressed">#CDCEC9</color>
+    <color name="right_menu_pressed">#C3C3C3</color>
+    <color name="menu_item_press">#2e000000</color>
+    <color name="page_backgroup">#f2f2f2</color>
+    <!-- 灰色 -->
+    <color name="grey_color1">#333333</color>
+    <color name="grey_color2">#666666</color>
+    <color name="grey_color3">#999999</color>
+
+    <color name="gray">#808080</color>
+    <!-- 灰色 -->
+    <!--<color name="user_first_bg"></color>-->
+</resources>

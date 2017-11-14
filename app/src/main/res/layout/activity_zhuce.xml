@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_zhuce"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.bwie.shop_nsg.mine.view.view.ZhuceActivity">
+
+    <ImageView
+        android:id="@+id/comeback"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="0dp"
+        android:src="@mipmap/btn_back_detail_normal"/>
+
+    <EditText
+        android:id="@+id/re_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="请输入用户名"/>
+
+    <EditText
+        android:id="@+id/re_pass1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="请输入密码"/>
+
+    <EditText
+        android:id="@+id/re_pass2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="确认输入密码"/>
+
+    <EditText
+        android:id="@+id/re_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="请填写邮箱"/>
+
+    <Button
+        android:id="@+id/re_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="注册"
+        android:textSize="20sp"
+        android:textColor="@color/top_text"
+        android:background="@drawable/shape"/>
+
+</LinearLayout>

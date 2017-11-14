@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.bwie.shop_nsg.MainActivity">
+
+    <FrameLayout
+        android:id="@+id/frag"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"></FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true">
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                style="@style/AppBottom"
+                android:id="@+id/shou"
+                android:drawableTop="@drawable/selector_bar_1"
+                android:checked="true"
+                android:text="首页"
+                android:textColor="@drawable/selector_bar_text"
+                />
+
+            <RadioButton
+                style="@style/AppBottom"
+                android:id="@+id/fenclass"
+                android:drawableTop="@drawable/selector_bar_2"
+                android:text="分类"
+                android:textColor="@drawable/selector_bar_text"
+                />
+
+            <RadioButton
+                style="@style/AppBottom"
+                android:id="@+id/car"
+                android:drawableTop="@drawable/selector_bar_3"
+                android:text="购物车"
+                android:textColor="@drawable/selector_bar_text"
+                />
+
+            <RadioButton
+                style="@style/AppBottom"
+                android:id="@+id/user"
+                android:drawableTop="@drawable/selector_bar_4"
+                android:text="我的"
+                android:textColor="@drawable/selector_bar_text"
+                />
+        </RadioGroup>
+    </LinearLayout>
+</LinearLayout>
