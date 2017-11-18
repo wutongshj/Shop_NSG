@@ -1,12 +1,14 @@
 package com.bwie.shop_nsg.sort.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.bwie.shop_nsg.R;
+import com.bwie.shop_nsg.sort.view.view.GoodsListActivity;
 import com.bwie.shop_nsg.sort.bean.DateGridBean;
 
 import java.util.List;
@@ -43,17 +45,29 @@ public class MyAdapter_TypeGridView extends BaseAdapter {
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(final int position, View convertView, ViewGroup parent) {
         ViewHolder holder;
         if (convertView == null){
             convertView = View.inflate(context, R.layout.type_grid_item,null);
             holder = new ViewHolder();
             holder.tv = (TextView) convertView.findViewById(R.id.tv_gv_type);
+
             convertView.setTag(holder);
         }else {
             holder = (ViewHolder) convertView.getTag();
         }
         holder.tv.setText(list.get(position).getGc_name());
+
+        holder.tv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+//                EventBus.getDefault().postSticky(new GoodsEvent(position));
+                Intent intent = new Intent(context, GoodsListActivity.class);
+//                intent.putExtra("position",position);
+                context.startActivity(intent);
+            }
+        });
+
         return convertView;
     }
     class ViewHolder{

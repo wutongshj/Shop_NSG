@@ -3,11 +3,10 @@
     package="com.bwie.shop_nsg">
 
     <!-- 二维码： -->
-    <!--相机-->
+    <!-- 相机 -->
     <uses-permission android:name="android.permission.CAMERA" />
     <!-- 振动 -->
     <uses-permission android:name="android.permission.VIBRATE" />
-
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -28,7 +27,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".mine.view.LoginActivity" />
-        <activity android:name=".mine.view.view.ZhuceActivity"></activity>
+        <activity android:name=".mine.view.view.ZhuceActivity" />
+        <activity android:name=".home.view.HomeWebActivity" />
+        <activity android:name=".sort.view.view.GoodsListActivity" />
+        <activity android:name=".sort.view.view.ItemGoodsDetailsActivity"></activity>
     </application>
 
 </manifest>

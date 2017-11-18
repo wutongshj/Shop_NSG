@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.util.Log;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
@@ -46,7 +47,6 @@ public class MainActivity extends FragmentActivity {
         setContentView(R.layout.activity_main);
 
         ButterKnife.bind(this);
-        String name = (String) SharedPreferencesUtils.getParam(MainActivity.this, "name", "未登录");
 
         init();
     }
@@ -74,6 +74,18 @@ public class MainActivity extends FragmentActivity {
         beginTransaction.hide(mine);
 
         beginTransaction.commit();
+
+        String name = (String) SharedPreferencesUtils.getParam(MainActivity.this, "name", "未登录");
+        int flag = getIntent().getIntExtra("frag",1);
+        Log.d("flag",flag+"");
+        if (flag==6){
+            beginTransaction = fm.beginTransaction();
+            beginTransaction.show(cart);
+            beginTransaction.hide(sort);
+            beginTransaction.hide(home);
+            beginTransaction.hide(mine);
+            beginTransaction.commit();
+        }
     }
 
     @OnClick({R.id.shou, R.id.fenclass, R.id.car, R.id.user})

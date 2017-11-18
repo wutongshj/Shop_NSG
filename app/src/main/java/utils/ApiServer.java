@@ -1,12 +1,16 @@
 package utils;
 
 
+import com.bwie.shop_nsg.cart.bean.CarBean;
+import com.bwie.shop_nsg.cart.bean.SearchCartBean;
 import com.bwie.shop_nsg.home.bean.HomeBean;
 import com.bwie.shop_nsg.mine.bean.LoginMessage;
 import com.bwie.shop_nsg.mine.view.Bean.ReMessage;
 import com.bwie.shop_nsg.sort.bean.DataleftBean;
 import com.bwie.shop_nsg.sort.bean.DatarightBean;
 import com.bwie.shop_nsg.sort.bean.DateGridBean;
+import com.bwie.shop_nsg.sort.view.bean.DetailsBean;
+import com.bwie.shop_nsg.sort.view.bean.ItemGoodsBean;
 
 import java.util.Map;
 
@@ -39,4 +43,16 @@ public interface ApiServer {
 
     @GET("index.php?act=goods_class")
     Observable<DateGridBean> getgridsort(@Query("gc_id") String id2);
+
+    @POST("product/getProducts")
+    Observable<ItemGoodsBean> getgoods(@Query("pscid") String pid);
+
+    @POST("product/getProductDetail")
+    Observable<DetailsBean> getgoodsdetails(@Query("pid") String pid);
+
+    @POST("product/addCart")
+    Observable<CarBean> addcar(@QueryMap Map<String,String> map);
+
+    @POST("product/getCarts")
+    Observable<SearchCartBean> selcar(@QueryMap Map<String,String> map);
 }

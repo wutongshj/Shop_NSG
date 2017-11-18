@@ -86,6 +86,7 @@ public class LoginActivity extends AppCompatActivity implements Iview{
             EventBus.getDefault().post(new EventBean(name));
             SharedPreferencesUtils.setParam(LoginActivity.this,"name",name);
             SharedPreferencesUtils.setParam(LoginActivity.this,"isLogin",true);
+            SharedPreferencesUtils.setParam(LoginActivity.this,"uid",list.getData().getUid());
             finish();
         }
     }

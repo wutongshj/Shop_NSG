@@ -14,6 +14,7 @@ import android.widget.Toast;
 import com.bwie.shop_nsg.R;
 import com.bwie.shop_nsg.home.bean.GlideImageLoader;
 import com.bwie.shop_nsg.home.bean.HomeBean;
+import com.bwie.shop_nsg.home.view.HomeWebActivity;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.youth.banner.Banner;
 import com.youth.banner.listener.OnBannerClickListener;
@@ -97,6 +98,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                 @Override
                 public void OnBannerClick(int position) {
                     String data = list.getAd1().get(position-1).getAd_type_dynamic_data();
+                    intent = new Intent(mcontext, HomeWebActivity.class);
                     intent.putExtra("url",data);
                     mcontext.startActivity(intent);
                     Toast.makeText(mcontext,data,Toast.LENGTH_SHORT).show();

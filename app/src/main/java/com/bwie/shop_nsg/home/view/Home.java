@@ -15,6 +15,7 @@ import com.bwie.shop_nsg.R;
 import com.bwie.shop_nsg.home.adapter.RecyclerAdapter;
 import com.bwie.shop_nsg.home.bean.HomeBean;
 import com.bwie.shop_nsg.home.presenter.UserPresenter;
+import com.bwie.shop_nsg.sort.view.view.GoodsListActivity;
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
 import com.xys.libzxing.zxing.activity.CaptureActivity;
 
@@ -111,6 +112,8 @@ public class Home extends Fragment implements Iview {
             case R.id.edit:
                 break;
             case R.id.image2:
+                Intent intent = new Intent(getActivity(), GoodsListActivity.class);
+                startActivity(intent);
                 break;
         }
     }

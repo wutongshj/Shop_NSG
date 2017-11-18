@@ -2,6 +2,7 @@ package com.bwie.shop_nsg.home.bean;
 
 import android.app.Application;
 
+import com.facebook.drawee.backends.pipeline.Fresco;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 
@@ -16,5 +17,7 @@ public class MyApp extends Application {
 
         ImageLoaderConfiguration aDefault = ImageLoaderConfiguration.createDefault(getApplicationContext());
         ImageLoader.getInstance().init(aDefault);
+
+        Fresco.initialize(this);
     }
 }

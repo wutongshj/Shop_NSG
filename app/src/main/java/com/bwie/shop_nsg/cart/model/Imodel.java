@@ -5,4 +5,5 @@ package com.bwie.shop_nsg.cart.model;
  */
 
 public interface Imodel {
+    void getcargoods(String uid);
 }
